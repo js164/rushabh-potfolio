@@ -25,8 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY='your key here'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG=True
+DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG=True
 
 ALLOWED_HOSTS = ['127.0.0.1','rushabh-solanki.herokuapp.com']
 
@@ -87,9 +87,9 @@ DATABASES = {
     }
 }
 
-# import dj_database_url
+import dj_database_url
 
-# DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
